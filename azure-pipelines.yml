@@ -10,12 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- script: |  
-    # Instalar dependencias
-    pip install -r requirements.txt
-
-    # Ejecutar la aplicación Flask
-    - task: AzureRmWebAppDeployment@4
+- task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
     azureSubscription: 'Microsoft Imagine(b63b335e-ca71-4048-a17e-dabf5debe294)'
@@ -24,4 +19,3 @@ steps:
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     RuntimeStack: 'PYTHON|3.11'
     StartupCommand: 'gunicorn --bind=0.0.0.0  app:app'
-  displayName: 'Ejecutar flask app'
