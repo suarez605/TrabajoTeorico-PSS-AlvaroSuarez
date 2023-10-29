@@ -15,5 +15,13 @@ steps:
     pip install -r requirements.txt
 
     # Ejecutar la aplicación Flask
-    gunicorn --bind=0.0.0.0:8080  app:app &
+    - task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Microsoft Imagine(b63b335e-ca71-4048-a17e-dabf5debe294)'
+    appType: 'webAppLinux'
+    WebAppName: 'PruebaProyectoTeorico'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    RuntimeStack: 'PYTHON|3.11'
+    StartupCommand: 'gunicorn --bind=0.0.0.0  app:app'
   displayName: 'Ejecutar flask app'
