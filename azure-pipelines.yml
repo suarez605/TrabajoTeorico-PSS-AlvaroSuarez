@@ -15,5 +15,5 @@ steps:
     pip install -r requirements.txt
 
     # Ejecutar la aplicación Flask
-    python app.py
+    flask run
   displayName: 'Ejecutar flask app'
