@@ -30,5 +30,5 @@ steps:
 
 - script: |
     pip install pytest pytest-azurepipelines
-    pytest test_sumatorio.py
+    pytest tests_sumatorio.py
   displayName: 'pytest'
