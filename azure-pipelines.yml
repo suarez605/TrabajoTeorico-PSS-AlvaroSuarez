@@ -15,5 +15,5 @@ steps:
     pip install -r requirements.txt
 
     # Ejecutar la aplicación Flask
-    gunicorn --bind=0.0.0.0  app:app
+    gunicorn --bind=0.0.0.0:8080  app:app
   displayName: 'Ejecutar flask app'
