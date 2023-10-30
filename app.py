@@ -9,9 +9,8 @@ app = Flask(__name__)
 
 
 @app.route('/Bye')
-def draw_map():
+def bye():
     return "Bye"
-
 
 @app.route('/drawMap')
 def draw_map():
